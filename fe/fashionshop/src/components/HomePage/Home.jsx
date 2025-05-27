@@ -2,6 +2,7 @@ import React from "react";
 import Header from '../Header/Header';  
 import Footer from '../Footer/Footer';
 import './Home.scss';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
@@ -22,18 +23,20 @@ export default function App() {
 
       <section className="new-products">
         <h3>Sản Phẩm Mới</h3>
-        <div className="product-list">
-          {[...Array(6)].map((_, i) => (
-            <div className="product-card" key={i}>
-              <img
-                src={`https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80,${i}`}
-                alt="New Product"
-              />
-              <p>Shirt</p>
-              <p>Unisex</p>
-            </div>
-          ))}
-        </div>
+      <div className="product-list">
+  {[...Array(6)].map((_, i) => (
+    <div className="product-card" key={i}>
+      <Link to={`/product/${i + 1}`}>
+        <img
+          src={`https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80,${i}`}
+          alt="New Product"
+        />
+      </Link>
+      <p>Shirt</p>
+      <p>Unisex</p>
+    </div>
+  ))}
+</div>
       </section>
 
       <section className="featured-products">
