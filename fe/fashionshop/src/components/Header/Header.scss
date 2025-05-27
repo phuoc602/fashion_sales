@@ -1,0 +1,50 @@
+// src/components/Header/Header.scss
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff0c9;
+  padding: 10px 40px;
+  font-family: sans-serif;
+
+  &__logo img {
+     width:70px;         // hoặc kích thước tùy ý
+  height:70px;
+   border-radius: 70%;
+object-fit: cover;    // đảm bảo ảnh không bị méo
+  border: none;         // đảm bảo không có viền
+  display: block;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 24px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 18px;
+    font-size: 18px;
+    color: #333;
+
+    svg {
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}

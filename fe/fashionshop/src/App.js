@@ -1,11 +1,12 @@
 import React from 'react';
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import Home from './components/HomePage/Home';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">  
-        <h1>FashionShop</h1>  
-      </header>
+        {/* <Home/> */}
+        <ProductDetail/>
     </div>
   );
 }
