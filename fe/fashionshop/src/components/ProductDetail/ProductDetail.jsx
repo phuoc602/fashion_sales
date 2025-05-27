@@ -2,6 +2,7 @@ import React from "react";
 import './ProductDetail.scss';
 import Header from '../Header/Header'; 
 import Footer from '../Footer/Footer';
+import { useParams } from 'react-router-dom';
 
 function StarRating() {
   return (
@@ -22,6 +23,11 @@ function CheckIcon() {
 }
 
 export default function ProductDetail() {
+      const { id } = useParams(); // Lấy id từ URL
+
+  console.log('Product ID:', id); // Dùng để debug hoặc fetch data
+
+  // Phần còn lại của component...
   const relatedProducts = [
     {
       id: 1,
@@ -52,6 +58,7 @@ export default function ProductDetail() {
       price: "206.000₫",
     },
   ];
+  
 
   return (
     
