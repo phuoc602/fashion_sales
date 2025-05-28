@@ -4,46 +4,118 @@
   justify-content: space-between;
   background-color: #fff0c9;
   padding: 10px 40px;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 
   &__logo img {
-     width:70px;         // hoặc kích thước tùy ý
-  height:70px;
-   border-radius: 70%;
-object-fit: cover;    // đảm bảo ảnh không bị méo
-  border: none;         // đảm bảo không có viền
-  display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    display: block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
   }
 
   &__nav {
     display: flex;
     gap: 90px;
+    transition: opacity 0.3s ease;
 
     a {
       text-decoration: none;
       color: #333;
       font-weight: 600;
-      transition: color 0.3s;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: #000;
+        color: #323232;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: #323232;
+          border-radius: 3px;
+          animation: slideInWidth 0.3s ease forwards;
+        }
       }
     }
   }
 
   &__icons {
     display: flex;
+    align-items: center;
     gap: 25px;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
+    position: relative;
 
     svg {
       cursor: pointer;
-      transition: color 0.3s;
+      transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
         color: #000;
+        transform: scale(1.15) rotate(10deg);
       }
     }
+
+    .icon-search {
+      outline: none;
+      border: none;
+      transition: transform 0.4s ease;
+
+      &.active {
+        transform: rotate(90deg) scale(1.2);
+        color: #222;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/* Animation cho underline menu */
+@keyframes slideInWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* SearchBar container hiệu ứng mở rộng */
+.search-wrapper {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 110;
+
+  &.visible {
+    width: 280px;
+    opacity: 1;
   }
 }
