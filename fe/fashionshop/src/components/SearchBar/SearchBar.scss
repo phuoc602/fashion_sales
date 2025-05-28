@@ -1,0 +1,79 @@
+.search-bar {
+ position: absolute; // để phủ lên header__nav, không làm dịch chuyển layout
+  right: 120px;  // canh phải theo icons
+  width: 800px; // rộng hơn bình thường, kéo dài tìm kiếm
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(162, 159, 159, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+
+  input {
+    width: 780px;
+    padding: 10px;
+    border: 1px solid #ded8d8;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: #3c3b3b;
+    }
+  }
+
+  .suggestions-list {
+    position: absolute; // tuyệt đối để nằm sát dưới input
+    top: 100%; // ngay dưới input (100% chiều cao input)
+    left: 0;
+    width: 100%; // đúng chiều rộng input
+    margin-top: 5px; // cách input một chút
+    list-style: none;
+    padding: 0;
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(162, 159, 159, 0.2);
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    li {
+      padding: 10px 12px;
+      border-top: 1px solid #f0f0f0;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:hover,
+      &.highlight {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}
+
+// Scrollbar đẹp
+.suggestions-list::-webkit-scrollbar {
+  width: 6px;
+}
+.suggestions-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.suggestions-list::-webkit-scrollbar-track {
+  background: transparent;
+}
