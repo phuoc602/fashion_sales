@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './Header.scss';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from '../SearchBar/SearchBar';
@@ -7,6 +8,11 @@ import SearchBar from '../SearchBar/SearchBar';
 const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const searchWrapperRef = useRef();
+   const navigate = useNavigate(); // hook điều hướng
+
+   const goToProfile = () => {
+    navigate('/profile'); // chuyển đến trang profile
+  };
 
   const toggleSearch = () => {
     setSearchOpen((prev) => !prev);
@@ -57,13 +63,18 @@ const Header = () => {
           icon={faSearch}
           onClick={toggleSearch}
           className="icon-search"
-          title="Toggle search"
+          title="Tìm kiếm sản phẩm"
           tabIndex={0}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') toggleSearch();
           }}
         />
-        <FontAwesomeIcon icon={faUser} />
+       <FontAwesomeIcon
+        icon={faUser}
+        onClick={goToProfile}
+        className="icon-user"
+        title="Trang cá nhân"
+      />
         <FontAwesomeIcon icon={faShoppingCart} />
       </div>
     </header>
