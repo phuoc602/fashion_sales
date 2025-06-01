@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__top">
         <div className="footer__left">
-          <img src="/logoShop.png" alt="Logo" className="footer__logo" />
+          <img src="image/logoShop.png" alt="Logo" className="footer__logo" />
           <p>
             We are committed to delivering the latest fashion trends with quality and style. Explore our collections and stay inspired.
           </p>

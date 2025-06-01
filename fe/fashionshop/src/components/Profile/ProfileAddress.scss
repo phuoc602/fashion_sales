@@ -1,0 +1,114 @@
+.profile-address-page {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.address-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.address-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+   padding-bottom: 12px; 
+  border-bottom: 1px solid #ddd;
+
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .add-address-btn {
+    background-color: #f87171;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ef4444;
+    }
+  }
+}
+
+.address-item {
+  margin-bottom: 32px;
+
+  .address-name {
+    font-size: 16px;
+    margin-bottom: 4px;
+
+    span {
+      font-weight: normal;
+    }
+  }
+
+  .address-detail {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+.address-actions {
+  display: flex;
+  gap: 16px;
+
+  .update-btn,
+  .delete-btn {
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    background: none;
+    color: #2563eb;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #1e40af;
+      text-shadow: 0 0 8px rgba(30, 64, 175, 0.6);
+      transform: scale(1.05);
+    }
+  }
+
+  .default-btn {
+    background-color: #f87171;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+
+    &:hover {
+      background-color: #ef4444;
+      color: #fff; // Bảo đảm trắng luôn
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 24px;
+  }
+}
