@@ -44,11 +44,16 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src="logoShop.png" alt="Logo" />
-      </div>
+  <img
+    src="image/logoShop.png"
+    alt="Logo"
+    onClick={() => navigate('/home')}
+    style={{ cursor: 'pointer' }}
+  />
+</div>
 
       <nav className="header__nav">
-        <a href="/">Trang Chủ</a>
+        <a href="/home">Trang Chủ</a>
         <a href="/nam">Nam</a>
         <a href="/unisex">Unisex</a>
         <a href="/tre-em">Trẻ em</a>

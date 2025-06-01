@@ -52,6 +52,11 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
+       &:focus {
+        outline: none;
+        border-color: #8aa9ed;
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+      }
     }
 
     .gender-options {
